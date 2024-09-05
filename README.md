@@ -78,6 +78,8 @@ Abaixo alguns prints de telas do airflow funcionado com extração de dados diá
 
 ![image](https://github.com/user-attachments/assets/edba1a96-86a3-459b-ba4c-801ab9d9dbff)
 
+![image](https://github.com/user-attachments/assets/6d1b7d43-b6c4-4f5c-93c4-2a785c86fa25)
+
 ![image](https://github.com/user-attachments/assets/e8db50cf-a5c2-455c-a788-9da3fbdd378d)
 
 ![image](https://github.com/user-attachments/assets/2d716d05-ca13-4ea2-86a3-253aae3725b3)
