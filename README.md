@@ -42,6 +42,10 @@ Ctrl + L
 
 mkdir airflowalura
 cd airflowalura
+
+source venv/bin/activate
+
+
 ```
 
 3. Crie o ambiente virtual usando Python 3.9:
@@ -59,14 +63,57 @@ source venv/bin/activate
 ## 3. Instale as Dependências
 Agora, dentro do ambiente virtual, instale as dependências do projeto (Airflow, Spark, etc.) de acordo com o arquivo requirements.txt fornecido no repositório.
 
+instale o airflow
 ```bash
 
-pip install -r requirements.txt
+pip install 'apache-airflow==2.3.2' --constraint " https://raw.githubusercontent.com/apache/airflow/constraints-2.3.2/constraints-3.9.txt"
+
+## OU ENTÃO
+
+PYTHON_VERSION=3.9
+AIRFLOW_VERSION=2.3.2
+CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+
+pip install "apache-airflow[postgres,celery,redis]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+
+```
+
+Baixe, descompacte e instale o Apache Spark Hadoop
+
+
+### ABAIXE E INSTALE SPARK
+
+```bash
+## Donwload da ferramenta
+
+wget https://archive.apache.org/dist/spark/spark-3.1.3/spark-3.1.3-bin-hadoop3.2.tgz
+
+## Rodar o comando
+
+tar -xvzf spark-3.1.3-bin-handoop3.2.tgz
+
+pip install apache-airflow-providers-apache-spark==4.0.0
+
+```
+
+### Instale o JAVA
+```bash
+apt-get install openjdk-8-jdk-headless -qq
+
+sudo apt-get install openjdk-8-jdk-headless -qq
 ```
 
 ## 4. Execute o Projeto
 Agora que tudo está configurado, você pode iniciar o Airflow e agendar as tarefas para a extração, transformação e carregamento dos dados do Twitter fake.
 
+* rode o comando na pasta principal do projeto
+  
+```bash
+export SPARK_HOME=$(pwd)/spark-3.1.3-bin-handoop3.2
+export AIRFLOW_HOME=$(pwd)/airflow_twitter
+
+airflow standalone
+```
 
 
 # AIRFLOW_AUTO_EXTRACTOR
