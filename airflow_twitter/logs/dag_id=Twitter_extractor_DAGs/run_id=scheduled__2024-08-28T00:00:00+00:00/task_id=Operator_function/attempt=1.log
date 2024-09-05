@@ -1,0 +1,24 @@
+[2024-08-29 13:06:40,468] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.Operator_function scheduled__2024-08-28T00:00:00+00:00 [queued]>
+[2024-08-29 13:06:40,473] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.Operator_function scheduled__2024-08-28T00:00:00+00:00 [queued]>
+[2024-08-29 13:06:40,473] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-29 13:06:40,473] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-08-29 13:06:40,473] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-08-29 13:06:40,483] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): Operator_function> on 2024-08-28 00:00:00+00:00
+[2024-08-29 13:06:40,485] {standard_task_runner.py:52} INFO - Started process 55652 to run task
+[2024-08-29 13:06:40,488] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'Operator_function', 'scheduled__2024-08-28T00:00:00+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpeelm8ctq', '--error-file', '/tmp/tmpsfm6ccl6']
+[2024-08-29 13:06:40,489] {standard_task_runner.py:80} INFO - Job 53: Subtask Operator_function
+[2024-08-29 13:06:40,545] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.Operator_function scheduled__2024-08-28T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-08-29 13:06:40,592] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=Operator_function
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-28T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-28T00:00:00+00:00
+[2024-08-29 13:06:40,597] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-08-29 13:06:40,599] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-28T00:00:00.00Z&end_time=2024-08-29T00:00:00.00Z
+[2024-08-29 13:06:41,352] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=Operator_function, execution_date=20240828T000000, start_date=20240829T160640, end_date=20240829T160641
+[2024-08-29 13:06:41,414] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-08-29 13:06:41,427] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

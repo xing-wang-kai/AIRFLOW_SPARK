@@ -1,0 +1,883 @@
+[2024-09-03 15:51:59,935] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 15:51:59,941] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 15:51:59,941] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 15:51:59,941] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 15:51:59,941] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 15:51:59,949] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 15:51:59,952] {standard_task_runner.py:52} INFO - Started process 270873 to run task
+[2024-09-03 15:51:59,955] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpyhqhs801', '--error-file', '/tmp/tmp0tgxlcro']
+[2024-09-03 15:51:59,955] {standard_task_runner.py:80} INFO - Job 81: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 15:51:59,991] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 15:52:00,034] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 15:52:00,035] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer/extract_data=2024-08-26T00:00:00.00Z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 31, in execute
+    self.create_parent_folder()
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 23, in create_parent_folder
+    (Path(self.file_path).parent).mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 1 more time]
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/twitter_extractor_airflow'
+[2024-09-03 15:52:00,039] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T185159, end_date=20240903T185200
+[2024-09-03 15:52:00,045] {standard_task_runner.py:92} ERROR - Failed to execute job 81 for task BRONZE_LAYER_EXTRACTION_E ([Errno 13] Permission denied: '/twitter_extractor_airflow'; 270873)
+[2024-09-03 15:52:00,061] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-09-03 15:52:00,102] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 15:58:04,406] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 15:58:04,415] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 15:58:04,416] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 15:58:04,416] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 15:58:04,416] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 15:58:04,430] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 15:58:04,433] {standard_task_runner.py:52} INFO - Started process 274267 to run task
+[2024-09-03 15:58:04,437] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpegl13cbj', '--error-file', '/tmp/tmpimvj3d5l']
+[2024-09-03 15:58:04,438] {standard_task_runner.py:80} INFO - Job 81: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 15:58:04,484] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 15:58:04,538] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 15:58:04,539] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer/extract_data=2024-08-26T00:00:00.00Z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 31, in execute
+    self.create_parent_folder()
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 23, in create_parent_folder
+    (Path(self.file_path).parent).mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 1 more time]
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/twitter_extractor_airflow'
+[2024-09-03 15:58:04,543] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T185804, end_date=20240903T185804
+[2024-09-03 15:58:04,555] {standard_task_runner.py:92} ERROR - Failed to execute job 81 for task BRONZE_LAYER_EXTRACTION_E ([Errno 13] Permission denied: '/twitter_extractor_airflow'; 274267)
+[2024-09-03 15:58:04,594] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-09-03 15:58:04,623] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 16:00:34,812] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:00:34,818] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:00:34,818] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:00:34,818] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 16:00:34,818] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:00:34,827] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 16:00:34,830] {standard_task_runner.py:52} INFO - Started process 275294 to run task
+[2024-09-03 16:00:34,834] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpgip6kitv', '--error-file', '/tmp/tmpjrm_4gni']
+[2024-09-03 16:00:34,834] {standard_task_runner.py:80} INFO - Job 81: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 16:00:34,871] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 16:00:34,916] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 16:00:34,917] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/datalake/bronze/twitter_dataengineer/extract_data=2024-08-26T00:00:00.00Z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/datalake/bronze/twitter_dataengineer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/datalake/bronze'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 31, in execute
+    self.create_parent_folder()
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 23, in create_parent_folder
+    (Path(self.file_path).parent).mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/datalake'
+[2024-09-03 16:00:34,921] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T190034, end_date=20240903T190034
+[2024-09-03 16:00:34,931] {standard_task_runner.py:92} ERROR - Failed to execute job 81 for task BRONZE_LAYER_EXTRACTION_E ([Errno 13] Permission denied: '/datalake'; 275294)
+[2024-09-03 16:00:34,949] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-09-03 16:00:34,975] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 16:02:29,966] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:02:29,973] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:02:29,973] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:02:29,973] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 16:02:29,973] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:02:29,989] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 16:02:29,995] {standard_task_runner.py:52} INFO - Started process 276029 to run task
+[2024-09-03 16:02:29,998] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpg63dkzyq', '--error-file', '/tmp/tmpq_0hy60u']
+[2024-09-03 16:02:29,999] {standard_task_runner.py:80} INFO - Job 81: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 16:02:30,043] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 16:02:30,102] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 16:02:30,103] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer/extract_data=2024-08-26T00:00:00.00Z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 31, in execute
+    self.create_parent_folder()
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 23, in create_parent_folder
+    (Path(self.file_path).parent).mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 1 more time]
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/twitter_extractor_airflow'
+[2024-09-03 16:02:30,106] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T190229, end_date=20240903T190230
+[2024-09-03 16:02:30,117] {standard_task_runner.py:92} ERROR - Failed to execute job 81 for task BRONZE_LAYER_EXTRACTION_E ([Errno 13] Permission denied: '/twitter_extractor_airflow'; 276029)
+[2024-09-03 16:02:30,130] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-09-03 16:02:30,155] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 16:04:07,348] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:04:07,354] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:04:07,354] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:04:07,354] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 16:04:07,355] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:04:07,364] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 16:04:07,366] {standard_task_runner.py:52} INFO - Started process 276728 to run task
+[2024-09-03 16:04:07,369] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpo511527y', '--error-file', '/tmp/tmppxj3ym4z']
+[2024-09-03 16:04:07,370] {standard_task_runner.py:80} INFO - Job 81: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 16:04:07,401] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 16:04:07,443] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 16:04:07,444] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer/extract_data=2024-08-26T00:00:00.00Z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 31, in execute
+    self.create_parent_folder()
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 23, in create_parent_folder
+    (Path(self.file_path).parent).mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 1 more time]
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/twitter_extractor_airflow'
+[2024-09-03 16:04:07,447] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T190407, end_date=20240903T190407
+[2024-09-03 16:04:07,456] {standard_task_runner.py:92} ERROR - Failed to execute job 81 for task BRONZE_LAYER_EXTRACTION_E ([Errno 13] Permission denied: '/twitter_extractor_airflow'; 276728)
+[2024-09-03 16:04:07,464] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-09-03 16:04:07,489] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 16:13:44,599] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:13:44,617] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:13:44,617] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:13:44,618] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 16:13:44,618] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:13:44,633] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 16:13:44,636] {standard_task_runner.py:52} INFO - Started process 278391 to run task
+[2024-09-03 16:13:44,640] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '81', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpwn3r6dqu', '--error-file', '/tmp/tmp4pva47dm']
+[2024-09-03 16:13:44,640] {standard_task_runner.py:80} INFO - Job 81: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 16:13:44,694] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 16:13:44,754] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 16:13:44,755] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer/extract_data=2024-08-26T00:00:00.00Z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze/twitter_dataengineer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake/bronze'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/twitter_extractor_airflow/datalake'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 31, in execute
+    self.create_parent_folder()
+  File "/home/kai/Documents/PROJETOS/twitter_extractor_airflow/airflow_twitter/operators/twitter_operator.py", line 23, in create_parent_folder
+    (Path(self.file_path).parent).mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.9/pathlib.py", line 1327, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 1 more time]
+  File "/usr/lib/python3.9/pathlib.py", line 1323, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/twitter_extractor_airflow'
+[2024-09-03 16:13:44,761] {taskinstance.py:1395} INFO - Marking task as FAILED. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T191344, end_date=20240903T191344
+[2024-09-03 16:13:44,770] {standard_task_runner.py:92} ERROR - Failed to execute job 81 for task BRONZE_LAYER_EXTRACTION_E ([Errno 13] Permission denied: '/twitter_extractor_airflow'; 278391)
+[2024-09-03 16:13:44,788] {local_task_job.py:156} INFO - Task exited with return code 1
+[2024-09-03 16:13:44,817] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 16:23:13,592] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:23:13,597] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:23:13,598] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:23:13,598] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 16:23:13,598] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:23:13,607] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 16:23:13,609] {standard_task_runner.py:52} INFO - Started process 284422 to run task
+[2024-09-03 16:23:13,612] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmps2s3tgvx', '--error-file', '/tmp/tmpn60qrmyl']
+[2024-09-03 16:23:13,613] {standard_task_runner.py:80} INFO - Job 87: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 16:23:13,644] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 16:23:13,685] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 16:23:13,689] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-09-03 16:23:13,690] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z
+[2024-09-03 16:23:14,296] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T192313, end_date=20240903T192314
+[2024-09-03 16:23:14,332] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-03 16:23:14,347] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 16:41:19,713] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:41:19,720] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 16:41:19,720] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:41:19,720] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 16:41:19,720] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 16:41:19,728] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 16:41:19,731] {standard_task_runner.py:52} INFO - Started process 295136 to run task
+[2024-09-03 16:41:19,734] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpm0izjoey', '--error-file', '/tmp/tmp3zqwtlz1']
+[2024-09-03 16:41:19,735] {standard_task_runner.py:80} INFO - Job 87: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 16:41:19,768] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 16:41:19,808] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 16:41:19,813] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-09-03 16:41:19,814] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z
+[2024-09-03 16:41:20,503] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T194119, end_date=20240903T194120
+[2024-09-03 16:41:20,529] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-03 16:41:20,554] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 17:54:55,718] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 17:54:55,722] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 17:54:55,722] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 17:54:55,723] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 17:54:55,723] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 17:54:55,734] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 17:54:55,736] {standard_task_runner.py:52} INFO - Started process 325238 to run task
+[2024-09-03 17:54:55,739] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpbnhba_2c', '--error-file', '/tmp/tmp4y3gzp_n']
+[2024-09-03 17:54:55,739] {standard_task_runner.py:80} INFO - Job 93: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 17:54:55,773] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 17:54:55,812] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 17:54:55,816] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-09-03 17:54:55,817] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z
+[2024-09-03 17:54:56,416] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T205455, end_date=20240903T205456
+[2024-09-03 17:54:56,436] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-03 17:54:56,458] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 18:11:55,259] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 18:11:55,266] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 18:11:55,267] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 18:11:55,267] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 18:11:55,267] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 18:11:55,276] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 18:11:55,278] {standard_task_runner.py:52} INFO - Started process 334133 to run task
+[2024-09-03 18:11:55,282] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmp25u3th8y', '--error-file', '/tmp/tmpw1dbc02v']
+[2024-09-03 18:11:55,282] {standard_task_runner.py:80} INFO - Job 95: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 18:11:55,318] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 18:11:55,366] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 18:11:55,370] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-09-03 18:11:55,372] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z
+[2024-09-03 18:11:56,012] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:56,155] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:56,296] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:56,435] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:56,573] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:56,713] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:56,853] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:57,000] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:57,139] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:57,281] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:57,424] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:57,569] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:57,711] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:57,851] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:57,996] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:58,136] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:58,279] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:58,418] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:58,559] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:58,753] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:58,909] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:59,052] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:59,194] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:59,359] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:59,502] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:59,641] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:59,780] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:11:59,918] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:00,085] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:00,228] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:00,368] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:00,507] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:00,648] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:00,787] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:00,926] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:01,066] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:01,211] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:01,353] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:01,503] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:01,647] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:01,795] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:01,935] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:02,082] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:02,224] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:02,368] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:02,513] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:02,658] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:02,806] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:02,949] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:03,090] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:03,236] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:03,379] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:03,521] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:03,661] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:03,799] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:03,942] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:04,088] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:04,235] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:04,384] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:04,533] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:04,699] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:04,843] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:04,988] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:05,135] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:05,433] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:05,574] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:05,714] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:05,851] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:05,997] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:06,140] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:06,286] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:06,424] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:06,565] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:06,704] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:06,844] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:07,146] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:07,290] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:07,436] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:07,584] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:07,723] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:07,864] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:08,004] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:08,143] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:08,281] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:08,432] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:08,575] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:08,713] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:08,851] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:08,993] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:09,136] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:09,275] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:09,418] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:09,560] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:09,700] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:09,839] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:09,981] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:10,123] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:10,262] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:10,408] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 18:12:10,614] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T211155, end_date=20240903T211210
+[2024-09-03 18:12:10,665] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-03 18:12:10,685] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 18:16:08,610] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 18:16:08,616] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 18:16:08,616] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 18:16:08,616] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 18:16:08,617] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 18:16:08,631] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 18:16:08,633] {standard_task_runner.py:52} INFO - Started process 337685 to run task
+[2024-09-03 18:16:08,636] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmpbg9z_m3m', '--error-file', '/tmp/tmpl1pe6d0r']
+[2024-09-03 18:16:08,637] {standard_task_runner.py:80} INFO - Job 92: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 18:16:08,673] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 18:16:08,719] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 18:16:08,723] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-09-03 18:16:08,724] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z
+[2024-09-03 18:16:09,309] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T211608, end_date=20240903T211609
+[2024-09-03 18:16:09,357] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-03 18:16:09,380] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 18:22:07,350] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 18:22:07,357] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 18:22:07,357] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 18:22:07,358] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 18:22:07,358] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 18:22:07,366] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 18:22:07,371] {standard_task_runner.py:52} INFO - Started process 343892 to run task
+[2024-09-03 18:22:07,375] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmp29ubcc2p', '--error-file', '/tmp/tmpjidtg847']
+[2024-09-03 18:22:07,375] {standard_task_runner.py:80} INFO - Job 92: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 18:22:07,412] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 18:22:07,460] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 18:22:07,467] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-09-03 18:22:07,468] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z
+[2024-09-03 18:22:08,064] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240903T212207, end_date=20240903T212208
+[2024-09-03 18:22:08,074] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-03 18:22:08,102] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 21:43:49,221] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 21:43:49,227] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 21:43:49,228] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 21:43:49,228] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 21:43:49,228] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 21:43:49,236] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 21:43:49,239] {standard_task_runner.py:52} INFO - Started process 418267 to run task
+[2024-09-03 21:43:49,242] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '92', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmp0paennv4', '--error-file', '/tmp/tmppfiksdy6']
+[2024-09-03 21:43:49,243] {standard_task_runner.py:80} INFO - Job 92: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 21:43:49,276] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 21:43:49,346] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 21:43:49,352] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-09-03 21:43:49,354] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z
+[2024-09-03 21:43:50,036] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:50,177] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:50,315] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:50,454] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:50,591] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:50,729] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:50,870] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:51,010] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:51,151] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:51,291] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:51,431] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:51,573] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:51,713] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:51,854] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:51,992] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:52,152] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:52,292] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:52,431] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:52,575] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:52,715] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:52,855] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:52,996] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:53,135] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:53,279] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:53,420] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:53,565] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:53,705] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:53,845] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:53,985] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:54,131] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:54,270] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:54,412] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:54,550] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:54,752] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:54,892] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:55,033] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:55,172] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:55,318] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:55,495] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:55,647] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:55,787] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:55,927] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:56,118] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:56,258] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:56,396] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:56,538] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:56,683] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:56,864] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:57,066] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:57,328] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:57,507] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:57,674] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:57,870] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:58,073] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:58,225] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:58,367] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:58,507] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:58,659] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:58,855] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:59,020] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:59,249] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:59,408] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:59,658] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:43:59,819] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:00,044] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:00,261] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:00,417] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:00,579] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:00,720] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:00,862] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:01,008] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:01,194] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:01,342] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:01,551] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:01,699] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:01,860] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:02,000] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:02,140] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:02,283] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:02,430] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:02,575] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:02,722] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:02,912] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:03,057] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:03,195] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:03,334] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:03,474] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:03,615] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:03,756] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:03,905] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:04,075] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:04,216] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:04,355] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:04,496] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:04,639] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:04,784] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:04,922] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:05,060] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:05,205] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 21:44:05,373] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240904T004349, end_date=20240904T004405
+[2024-09-03 21:44:05,398] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-03 21:44:05,417] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-03 22:52:02,783] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 22:52:02,791] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [queued]>
+[2024-09-03 22:52:02,791] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 22:52:02,791] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2024-09-03 22:52:02,791] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2024-09-03 22:52:02,801] {taskinstance.py:1377} INFO - Executing <Task(TwitterOperator): BRONZE_LAYER_EXTRACTION_E> on 2024-08-26 00:00:00+00:00
+[2024-09-03 22:52:02,805] {standard_task_runner.py:52} INFO - Started process 451049 to run task
+[2024-09-03 22:52:02,809] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'Twitter_extractor_DAGs', 'BRONZE_LAYER_EXTRACTION_E', 'scheduled__2024-08-26T00:00:00+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/twitter_dag.py', '--cfg-path', '/tmp/tmps02wok_6', '--error-file', '/tmp/tmpcqqvzdpp']
+[2024-09-03 22:52:02,809] {standard_task_runner.py:80} INFO - Job 137: Subtask BRONZE_LAYER_EXTRACTION_E
+[2024-09-03 22:52:02,898] {task_command.py:370} INFO - Running <TaskInstance: Twitter_extractor_DAGs.BRONZE_LAYER_EXTRACTION_E scheduled__2024-08-26T00:00:00+00:00 [running]> on host kaiwangairflow
+[2024-09-03 22:52:02,980] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=Twitter_extractor_DAGs
+AIRFLOW_CTX_TASK_ID=BRONZE_LAYER_EXTRACTION_E
+AIRFLOW_CTX_EXECUTION_DATE=2024-08-26T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-08-26T00:00:00+00:00
+[2024-09-03 22:52:02,990] {base.py:68} INFO - Using connection ID 'twitter_connections_default' for task execution.
+[2024-09-03 22:52:02,992] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z
+[2024-09-03 22:52:03,594] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:03,738] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:03,884] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:04,023] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:04,163] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:04,302] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:04,440] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:04,582] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:04,722] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:04,862] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:05,004] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:05,152] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:05,312] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:05,510] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:05,653] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:05,794] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:05,943] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:06,084] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:06,249] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:06,391] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:06,531] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:06,669] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:06,810] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:06,956] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:07,099] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:07,240] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:07,382] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:07,526] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:07,669] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:07,817] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:07,958] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:08,110] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:08,251] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:08,391] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:08,564] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:08,735] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:08,877] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:09,017] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:09,158] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:09,300] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:09,442] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:09,585] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:09,723] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:09,866] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:10,006] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:10,154] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:10,293] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:10,436] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:10,581] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:10,728] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:10,876] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:11,049] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:11,206] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:11,350] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:11,494] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:11,656] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:11,797] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:11,987] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:12,138] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:12,280] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:12,422] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:12,560] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:12,701] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:12,846] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:12,987] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:13,128] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:13,284] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:13,432] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:13,575] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:13,749] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:13,945] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:14,094] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:14,235] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:14,391] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:14,535] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:14,672] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:14,811] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:14,952] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:15,098] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:15,243] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:15,385] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:15,525] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:15,704] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:15,910] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:16,112] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:16,270] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:16,421] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:16,728] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:16,941] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:17,082] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:17,228] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:17,379] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:17,537] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:17,683] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:17,830] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:17,969] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:18,109] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:18,251] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:18,397] {twitter_hook.py:65} INFO - URL: https://labdados.com/2/tweets/search/recent?query=data engineer&tweet.fields=author_id,conversation_id,created_at,id,in_reply_to_user_id,public_metrics,lang,text&expansions=author_id&user.fields=id,name,username,created_at&start_time=2024-08-26T00:00:00.00Z&end_time=2024-08-27T00:00:00.00Z&next_token=1234567890abcdef
+[2024-09-03 22:52:18,580] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=Twitter_extractor_DAGs, task_id=BRONZE_LAYER_EXTRACTION_E, execution_date=20240826T000000, start_date=20240904T015202, end_date=20240904T015218
+[2024-09-03 22:52:18,603] {local_task_job.py:156} INFO - Task exited with return code 0
+[2024-09-03 22:52:18,620] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
